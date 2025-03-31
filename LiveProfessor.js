@@ -21,8 +21,8 @@ class LiveProfessorInstance extends InstanceBase {
 			tempoflash: false,
 			ping: false,
 			currentGlobalSnapshot: { id: 0, name: '' },
-			rotaryValues: [0.0, 0.0, 0.0, 0.0],
-			rotaryPush: [false, false, false, false],
+			rotaryValues: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+			rotaryPush: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
 			quickAssignMode: false,
 		}
 		//Set default ports
@@ -126,18 +126,16 @@ class LiveProfessorInstance extends InstanceBase {
 			ActiveCueName: '',
 			ActiveGlobalSnapshot: '',
 			TouchNTurnName: '',
-			Rotary1Name: 'Rotary1',
-			Rotary1Value: '0.0',
-			Rotary2Name: 'Rotary2',
-			Rotary2Value: '0.0',
-			Rotary3Name: 'Rotary3',
-			Rotary3Value: '0.0',
-			Rotary4Name: 'Rotary4',
-			Rotary4Value: '0.0',
 		})
 		let i
 		for (i = 1; i < 100; i++) {
 			this.setVariableValues({ ['GSname' + i]: 'Snap ' + i })
+		}
+		for (i = 1; i < 99; i++) {
+			this.setVariableValues({ ['Rotary' + i + 'Name']: 'Rotary' + i })
+		}
+		for (i = 1; i < 99; i++) {
+			this.setVariableValues({ ['Rotary' + i + 'Value']: '0.0' })
 		}
 	}
 

@@ -12,7 +12,7 @@ exports.getVariables = function () {
 	for (i = 1; i < 24; i++) {
 		variables.push({ variableId: 'GenericButton' + i + 'Name', name: 'Button Name ' + i })
 	}
-	for (i = 1; i < 5; i++) {
+	for (i = 1; i < 99; i++) {
 		variables.push({ variableId: 'Rotary' + i + 'Name', name: 'Rotary Name ' + i })
 		variables.push({ variableId: 'Rotary' + i + 'Value', name: 'Rotary Value ' + i })
 	}
