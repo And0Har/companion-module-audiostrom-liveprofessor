@@ -11,7 +11,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'Recall Next',
 			color: '16777215',
-			size: 'auto',
+			size: '16',
 			bgcolor: combineRgb(0, 0, 0),
 		},
 		steps: [
@@ -36,7 +36,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'Recall Previous',
 			color: '16777215',
-			size: 'auto',
+			size: '16',
 			bgcolor: combineRgb(0, 0, 0),
 		},
 		steps: [
@@ -61,7 +61,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'Update Snapshot',
 			color: '16777215',
-			size: 'auto',
+			size: '16',
 			bgcolor: combineRgb(0, 0, 0),
 		},
 		steps: [
@@ -86,7 +86,7 @@ exports.getPresets = function () {
 			name: 'Global Snapshot ' + i,
 			style: {
 				text: '$(LiveProfessor:GSname' + i + ')',
-				size: 'pstSize',
+				size: 'auto',
 				color: '16777215',
 				bgcolor: '0',
 			},
@@ -232,7 +232,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'GO',
 			color: '0',
-			size: 'auto',
+			size: '24',
 			bgcolor: combineRgb(102, 255, 51),
 		},
 		steps: [
@@ -254,7 +254,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'GO Previous',
 			color: '16777215',
-			size: 'auto',
+			size: '16',
 			bgcolor: combineRgb(0, 0, 0),
 		},
 		steps: [
@@ -276,7 +276,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'Up',
 			color: '16777215',
-			size: 'auto',
+			size: '24',
 			bgcolor: combineRgb(0, 0, 0),
 		},
 		steps: [
@@ -298,7 +298,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'Down',
 			color: '16777215',
-			size: 'auto',
+			size: '24',
 			bgcolor: combineRgb(0, 0, 0),
 		},
 		steps: [
@@ -320,7 +320,7 @@ exports.getPresets = function () {
 		style: {
 			text: 'Stop',
 			color: '16777215',
-			size: 'auto',
+			size: '24',
 			bgcolor: combineRgb(115, 0, 0),
 		},
 		steps: [
@@ -371,7 +371,7 @@ exports.getPresets = function () {
 	})
 
 	//Presets for 4 rotatries
-	for (i = 1; i < 99; i++) {
+	for (i = 1; i < 100; i++) {
 		presets.push({
 			type: 'button',
 			category: 'Rotaries',
@@ -380,8 +380,8 @@ exports.getPresets = function () {
 				rotaryActions: true,
 			},
 			style: {
-				text: 'Rotary ' + i,
-				size: '18pt',
+				text: 'Rotary ' + i + '\nDial',
+				size: '20',
 				color: '16777215',
 				bgcolor: combineRgb(0, 0, 0),
 			},

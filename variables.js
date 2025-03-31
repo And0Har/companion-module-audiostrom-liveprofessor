@@ -9,10 +9,10 @@ exports.getVariables = function () {
 		variables.push({ variableId: 'GSname' + i, name: 'Global Snapshot Name ' + i })
 	}
 
-	for (i = 1; i < 24; i++) {
+	for (i = 1; i < 25; i++) {
 		variables.push({ variableId: 'GenericButton' + i + 'Name', name: 'Button Name ' + i })
 	}
-	for (i = 1; i < 99; i++) {
+	for (i = 1; i < 100; i++) {
 		variables.push({ variableId: 'Rotary' + i + 'Name', name: 'Rotary Name ' + i })
 		variables.push({ variableId: 'Rotary' + i + 'Value', name: 'Rotary Value ' + i })
 	}

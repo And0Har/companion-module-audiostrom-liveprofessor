@@ -21,8 +21,8 @@ class LiveProfessorInstance extends InstanceBase {
 			tempoflash: false,
 			ping: false,
 			currentGlobalSnapshot: { id: 0, name: '' },
-			rotaryValues: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-			rotaryPush: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+			rotaryValues: [0.0],
+			rotaryPush: [false],
 			quickAssignMode: false,
 		}
 		//Set default ports
@@ -97,7 +97,7 @@ class LiveProfessorInstance extends InstanceBase {
 		this.setActionDefinitions(getActions(this))
 	}
 
-	//Timer used to flash the tempo in the "tap-tempo" button
+	// Timer used to flash the tempo in the "tap-tempo" button
 	tempoTimer() {
 		this.liveprofessorState.tempoflash = !this.liveprofessorState.tempoflash
 		this.checkFeedbacks('TempoFlash')
@@ -107,35 +107,33 @@ class LiveProfessorInstance extends InstanceBase {
 		this.setFeedbackDefinitions(getFeedbacks(this))
 	}
 
-	//Seems to store some states
+	// Initial value of variables on startup
 
 	init_variables() {
 		this.setVariableDefinitions(getVariables())
 
 		this.setVariableValues({
-			GenericButton1Name: 'Button 1',
-			GenericButton2Name: 'Button 2',
-			GenericButton3Name: 'Button 3',
-			GenericButton4Name: 'Button 4',
-			GenericButton5Name: 'Button 5',
-			GenericButton6Name: 'Button 6',
-			GenericButton7Name: 'Button 7',
-			GenericButton8Name: 'Button 8',
-			tempo: '120',
-			NextCueName: '',
-			ActiveCueName: '',
-			ActiveGlobalSnapshot: '',
-			TouchNTurnName: '',
+			tempo: 'Tempo',
+			NextCueName: 'NextCueName',
+			ActiveCueName: 'ActiveCueName',
+			ActiveGlobalSnapshot: 'ActiveGlobalSnapshot',
+			TouchNTurnName: 'TochNTurnName',
 		})
 		let i
 		for (i = 1; i < 100; i++) {
 			this.setVariableValues({ ['GSname' + i]: 'Snap ' + i })
 		}
-		for (i = 1; i < 99; i++) {
+		for (i = 1; i < 25; i++) {
+			this.setVariableValues({ ['GenericButton' + i + 'Name']: 'Button ' + i })
+		}
+		for (i = 1; i < 100; i++) {
 			this.setVariableValues({ ['Rotary' + i + 'Name']: 'Rotary' + i })
 		}
-		for (i = 1; i < 99; i++) {
+		for (i = 1; i < 100; i++) {
 			this.setVariableValues({ ['Rotary' + i + 'Value']: '0.0' })
+		}
+		for (i = 1; i < 100; i++) {
+			this.setVariableValues({ ['ViewSetName' + i]: 'View Set ' + i })
 		}
 	}
 
